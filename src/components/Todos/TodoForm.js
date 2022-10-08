@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import styles from './TodoForm.module.css'
+import { useState } from 'react';
+import Button from '../UI/Button';
+import styles from './TodoForm.module.css';
 
 function TodoForm({ addTodo }) {
-  const [text, setText] = useState('')
+  const [text, setText] = useState('');
 
   const onSubmitHandler = (e) => {
-    e.preventDefault()
-    addTodo(text)
-    setText('')
-  }
+    e.preventDefault();
+    addTodo(text);
+    setText('');
+  };
 
   return (
     <div className={styles.todoFormContainer}>
@@ -19,10 +20,12 @@ function TodoForm({ addTodo }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <Button type="submit" title={'Submit'}>
+          Submit
+        </Button>
       </form>
     </div>
-  )
+  );
 }
 
-export default TodoForm
+export default TodoForm;
