@@ -5,5 +5,5 @@
 /build
 
 # misc
-
+.env
 .env.local
